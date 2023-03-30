@@ -12,11 +12,11 @@ public class Playlist {
     }
     
     public void addSong(String song) {
-        // If playlist is already at capacity, remove the oldest song
+        
         if (songs.size() == capacity) {
             songs.removeFirst();
         }
-        // Add new song to end of playlist
+        
         songs.addLast(song);
     }
     
