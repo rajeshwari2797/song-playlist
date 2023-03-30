@@ -1,0 +1,46 @@
+code for song playlist.
+
+import java.util.LinkedList;
+
+public class Playlist {
+    private LinkedList<String> songs;
+    private int capacity;
+    
+    public Playlist(int capacity) {
+        this.songs = new LinkedList<String>();
+        this.capacity = capacity;
+    }
+    
+    public void addSong(String song) {
+        // If playlist is already at capacity, remove the oldest song
+        if (songs.size() == capacity) {
+            songs.removeFirst();
+        }
+        // Add new song to end of playlist
+        songs.addLast(song);
+    }
+    
+    public void print() {
+        System.out.println("Playlist:");
+        for (String song : songs) {
+            System.out.println(song);
+        }
+    }
+    
+    public static void main(String[] args) {
+        Playlist playlist = new Playlist(3);
+        playlist.addSong("S1");
+        playlist.addSong("S2");
+        playlist.addSong("S3");
+        playlist.print();
+        playlist.addSong("S4");
+        playlist.print();
+        playlist.addSong("S2");
+        playlist.print();
+        playlist.addSong("S1");
+        playlist.print();
+    }
+}
+
+
+
